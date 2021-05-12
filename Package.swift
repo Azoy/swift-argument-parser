@@ -19,11 +19,16 @@ var package = Package(
             name: "ArgumentParser",
             targets: ["ArgumentParser"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(
+            url: "https://github.com/Azoy/Echo.git",
+            .branch("sap")
+        )
+    ],
     targets: [
         .target(
             name: "ArgumentParser",
-            dependencies: []),
+            dependencies: ["Echo"]),
         .target(
             name: "ArgumentParserTestHelpers",
             dependencies: ["ArgumentParser"]),

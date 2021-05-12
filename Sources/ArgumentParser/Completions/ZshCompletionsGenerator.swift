@@ -39,6 +39,11 @@ struct ZshCompletionsGenerator {
     args.append("'(-h --help)'{-h,--help}'[Print help information.]'")
     
     var subcommands = type.configuration.subcommands
+    
+    if subcommands.isEmpty {
+      subcommands = findSubcommands(for: type)
+    }
+    
     var subcommandHandler = ""
     if !subcommands.isEmpty {
       args.append("'(-): :->command'")

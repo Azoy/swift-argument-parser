@@ -30,7 +30,11 @@ struct FishCompletionsGenerator {
     let isRootCommand = commands.count == 1
     let programName = commandChain[0]
     var subcommands = type.configuration.subcommands
-
+    
+    if subcommands.isEmpty {
+      subcommands = findSubcommands(for: type)
+    }
+    
     if !subcommands.isEmpty {
       if isRootCommand {
         subcommands.append(HelpCommand.self)

@@ -264,7 +264,6 @@ extension HelpGenerationTests {
       @Argument
       var argument: String = ""
     }
-    static var configuration = CommandConfiguration(subcommands: [CommandWithVeryLongName.self,ShortCommand.self,AnotherCommandWithVeryLongName.self,AnotherCommand.self])
   }
 
   func testHelpWithSubcommands() {

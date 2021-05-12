@@ -155,8 +155,7 @@ struct BaseCommand: ParsableCommand {
   static let baseFlagValue = "base"
 
   static var configuration = CommandConfiguration(
-    commandName: "base",
-    subcommands: [SubCommand.self]
+    commandName: "base"
   )
 
   @Option()
@@ -174,8 +173,7 @@ extension BaseCommand {
     static let subFlagValue = "sub"
 
     static var configuration = CommandConfiguration(
-      commandName: "sub",
-      subcommands: [SubSubCommand.self]
+      commandName: "sub"
     )
 
     @Option()
